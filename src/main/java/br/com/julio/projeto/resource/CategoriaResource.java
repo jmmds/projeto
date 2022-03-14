@@ -3,6 +3,8 @@ package br.com.julio.projeto.resource;
 
 
 
+import javax.servlet.annotation.HandlesTypes;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
@@ -29,7 +31,8 @@ public class CategoriaResource {
    @GetMapping(value = "/{id}")
   //  @RequestMapping( value = "/{id}", method = RequestMethod.GET) // Tem a mesma funcionalidade do @GetMapping - porém pode implementar os métodos de get. put. post
      public ResponseEntity<?> find(@PathVariable Integer id){
-        
+       
+      
         Categoria obj = service.find(id);
         return ResponseEntity.ok().body(obj);
        
