@@ -3,8 +3,6 @@ package br.com.julio.projeto.resource;
 
 
 
-import javax.servlet.annotation.HandlesTypes;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
