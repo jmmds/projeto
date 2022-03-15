@@ -6,13 +6,24 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import br.com.julio.projeto.domain.enums.TipoCliente;
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+import javax.persistence.OneToMany;
+
+import br.com.julio.projeto.domain.enums.TipoCliente;
+@Entity
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
 
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private String email;
@@ -20,8 +31,11 @@ public class Cliente implements Serializable {
 
     private Integer tipo;
 
+    @OneToMany(mappedBy = "cliente")
     private List<Endereco> enderecos = new ArrayList<>();
     
+    @ElementCollection // entidade fraca
+    @CollectionTable(name = "TELEFONE")
     private Set<String> telefone = new HashSet<>();  // conjunto de Strings
 
     public Cliente (){
