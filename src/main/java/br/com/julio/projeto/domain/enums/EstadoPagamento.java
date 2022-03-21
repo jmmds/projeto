@@ -1,6 +1,6 @@
 package br.com.julio.projeto.domain.enums;
 
-import br.com.julio.projeto.domain.Estado;
+
 
 public enum EstadoPagamento {
     PEDENTE(1, "Pendente"),

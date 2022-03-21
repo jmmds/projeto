@@ -1,7 +1,9 @@
 package br.com.julio.projeto.domain;
 
-import br.com.julio.projeto.domain.enums.EstadoPagamento;
+import javax.persistence.Entity;
 
+import br.com.julio.projeto.domain.enums.EstadoPagamento;
+@Entity
 public class PagamentoCartao extends Pagamento {
 
 
